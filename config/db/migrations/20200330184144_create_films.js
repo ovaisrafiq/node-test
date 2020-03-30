@@ -22,5 +22,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  //return knex.schema.dropTable('films')
+  return knex.schema.dropTable('films')
 };

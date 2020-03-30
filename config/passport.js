@@ -20,9 +20,9 @@ passport.use(new LocalStrategy(
      },
     async function(req,email, password, done) {
       console.log('*** in passport.use',email,password)
-      const decryptedString = cryptr.decrypt(password);
+      //const decryptedString = cryptr.decrypt(password);
 
-      let users = await global.knex('user').select().where({email:email,password:decryptedString})
+      let users = await global.knex('user').select().where({email:email,password:password})
       if(users && users.length > 0 ){
         return done(null, users[0]);     
       }
